@@ -23,7 +23,7 @@ st.markdown('Project by - **Pratik Datey**')
 st.markdown("***")
 
 user_input = st.text_input("Enter the Stock ",'ITC.NS')
-st.write("You can Find The Name Of the Stock  From This [Link](https://finance.yahoo.com/quote/INFY?p=INFY&.tsrc=fin-srch)")
+st.write("You can Find The Name Of the Stocks From This [Link](https://finance.yahoo.com/quote/INFY?p=INFY&.tsrc=fin-srch)")
 
 
 df= data.DataReader(user_input,'yahoo',start,end)
