@@ -154,7 +154,7 @@ st.pyplot(fig2)
 # prediction
 tail=data_testing.tail(80)
 tail_max=tail.max()[0]
-ms_tail=scaler.fit_transform(tail.values)
+ms_tail=scaler.fit_transform(tail)
 test_pred=(ms_tail).reshape([1,80])
 
 pred_value=int(model.predict(test_pred) * (tail_max))
