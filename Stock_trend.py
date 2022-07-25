@@ -93,7 +93,7 @@ st.pyplot(fig)
 # Spliting data into Train and Test
 
 data_training = pd.DataFrame(data['High'][0:int(len(data)*0.70)])
-data_testing  = pd.DataFrame(data['High'][int(len(data)*0.70):int(len(data))])
+data_testing  = pd.DataFrame(data['High'][int(len(data)*0.70):])
 
 
 from sklearn.preprocessing import MinMaxScaler
