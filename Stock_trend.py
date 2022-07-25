@@ -95,8 +95,6 @@ st.pyplot(fig)
 data_training = pd.DataFrame(data['High'][0:int(len(data)*0.70)])
 data_testing  = pd.DataFrame(data['High'][int(len(data)*0.70):int(len(data))])
 
-print(data_training.shape)
-print(data_testing.shape)
 
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0, 1))
@@ -153,10 +151,9 @@ st.pyplot(fig2)
 
 # prediction
 tail=data_testing.tail(80)
-tail_max=tail.max()[0]
 ms_tail=scaler.fit_transform(tail)
 test_pred=(ms_tail).reshape([1,80])
 
-pred_value=int(model.predict(test_pred) * (tail_max))
+pred_value=int(model.predict(test_pred) * (tail_max[0))
 st.write ('Predicted price of {} on {} date will be {}.'.format('user_input',date.today(),pred_value))
 
