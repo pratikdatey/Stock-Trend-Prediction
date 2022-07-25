@@ -159,5 +159,9 @@ test_pred=(ms_tail).reshape([1,80])
 
 pred_value=model.predict(test_pred)
 pred_value=int(pred_value * (tail.max()[0]))
-st.write('Predicted price of {} on {} date will be {}.'.format(user_input,date.today(),pred_value))
+
+st.markdown("***")
+st.subheader("Prediction Price")
+
+st.write('Predicted price of {}  on {}  date will be {}.'.format(user_input,date.today(),pred_value))
 
