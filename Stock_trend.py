@@ -150,3 +150,14 @@ plt.xlabel('Time')
 plt.ylabel('Price')
 plt.legend()
 st.pyplot(fig2)
+
+
+# prediction
+tail=data_testing.tail(80)
+tail_max=tail.max()[0]
+ms_tail=ms.fit_transform(tail.values)
+test_pred=(ms_tail).reshape([1,80])
+
+pred_value=int(model.predict(test_pred) * (tail_max))
+print('Predicted price of {} on {} date will be {}.'.format('user_input',date.today(),pred_value))
+print(date.today())
