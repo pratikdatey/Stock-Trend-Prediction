@@ -150,11 +150,14 @@ plt.legend()
 st.pyplot(fig2)
 
 # prediction
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler(feature_range=(0, 1))
+
 tail=data_testing.tail(80)
 ms_tail=scaler.fit_transform(tail)
 test_pred=(ms_tail).reshape([1,80])
 
 pred_value=int(model.predict(test_pred))
-pred_value=pred_value *(tail.max()[0])
+pred_value=pred_value * (tail.max()[0])
 st.write('Predicted price of {} on {} date will be {}.'.format('user_input',date.today(),pred_value))
 
