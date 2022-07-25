@@ -150,18 +150,18 @@ plt.legend()
 st.pyplot(fig2)
 
 # prediction
-from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler(feature_range=(0, 1))
+#from sklearn.preprocessing import MinMaxScaler
+#scaler = MinMaxScaler(feature_range=(0, 1))
 
-tail=data_testing.tail(80)
-ms_tail=scaler.fit_transform(tail)
-test_pred=(ms_tail).reshape([1,80])
+#tail=data_testing.tail(80)
+#ms_tail=scaler.fit_transform(tail)
+#test_pred=(ms_tail).reshape([1,80])
 
-pred_value=model.predict(test_pred)
-pred_value=int(pred_value * (tail.max()[0]))
+#pred_value=model.predict(test_pred)
+#pred_value=int(pred_value * (tail.max()[0]))
 
-st.markdown("***")
-st.subheader("Prediction Price")
+#st.markdown("***")
+#st.subheader("Prediction Price")
 
-st.write('Predicted HIGH price of {} stock on {}  is  {}.'.format(user_input,date.today(),pred_value))
+#st.write('Predicted HIGH price of {} stock on {}  is  {}.'.format(user_input,date.today(),pred_value))
 
