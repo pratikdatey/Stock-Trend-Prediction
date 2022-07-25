@@ -163,5 +163,5 @@ pred_value=int(pred_value * (tail.max()[0]))
 st.markdown("***")
 st.subheader("Prediction Price")
 
-st.write('Predicted HIGH price of {} stock on {}  will be {}.'.format(user_input,date.today(),pred_value))
+st.write('Predicted HIGH price of {} stock on {}  is  {}.'.format(user_input,date.today(),pred_value))
 
